@@ -4,10 +4,6 @@
 #include <ctype.h>
 #include <string.h>
 
-// index = 0.0588 * L - 0.296 * S - 15.8;
-// L is the average number of letters per 100 words in the text
-// and S is the average number of sentences per 100 words
-// number of letters, number of words, number of sentences
 int count_letters(string text)
 {
     int totalLetters = 0;
@@ -42,8 +38,8 @@ int count_sentences(string text)
  char testAtIndex;
     for(int i = 0; i < strlen(text); i++)
     {
-        testAtIndex = text[i];
-        if (strcmp(testAtIndex, ".") == 0);
+
+        if ( text[i] == '.')
         {
             totalSentences += 1;
         }
@@ -51,6 +47,8 @@ int count_sentences(string text)
     printf("%i \n", totalSentences);
     return totalSentences;
 }
+
+
 
 int main(void)
 {
@@ -60,5 +58,8 @@ int main(void)
     count_words(text);
     count_sentences(text);
     // return the resulting equation from these functions
+
+    // index = 0.0588 * L - 0.296 * S - 15.8;
     return count_letters(text);
 }
+
